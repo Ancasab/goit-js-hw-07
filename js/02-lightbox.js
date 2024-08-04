@@ -12,7 +12,7 @@ const createGalleryMarkup = (items) => {
         return `
             <li class="gallery__item">
                 <a class="gallery__link" href="${original}">
-                <img class="gallery__image" src="${preview}" alt="${description}" />
+                <img class="gallery__image" src="${preview}" alt="${description}" title="${description}"/>
                 </a>
             </li>`
 
@@ -26,21 +26,15 @@ const renderGallery = () => {
 renderGallery();
 
 
-// new SimpleLightbox('.gallery a', {
-//   captionDelay: 250,
-//   captionPosition: 'bottom',
-//   captionData: 'alt'
-// });
-
-
 new SimpleLightbox('.gallery a', {
   captionDelay: 250,
   captionPosition: 'bottom',
-  captionData: 'alt',
-  captionFormat: function(caption) {
-    return '<b>' + caption + '</b><br><i>Aici am adăugat un text suplimentar</i>';
-  }
+  captionData: 'alt'
 });
+
+
+
+
 
 
 
